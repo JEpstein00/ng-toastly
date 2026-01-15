@@ -37,7 +37,7 @@ import { ToastItemComponent } from '../toast-item/toast-item.component';
     '[attr.aria-label]': '"Notifications"',
   },
   template: `
-    @for (toast of toastService.visibleToasts(); track toast.id) {
+    @for (toast of filteredToasts(); track toast.id) {
       <toastly-item
         [toast]="toast"
         (mouseenter)="handleMouseEnter(toast.id)"
@@ -133,6 +133,16 @@ export class ToastContainerComponent {
    */
   readonly resolvedPosition = computed((): ToastPosition => {
     return this.position() ?? this.toastService.position();
+  });
+
+  /**
+   * Filtered list of toasts that match this container's position.
+   */
+  readonly filteredToasts = computed(() => {
+    const containerPosition = this.resolvedPosition();
+    return this.toastService.visibleToasts().filter(
+      (toast) => toast.position === containerPosition
+    );
   });
 
   /**
