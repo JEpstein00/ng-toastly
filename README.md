@@ -6,6 +6,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Angular](https://img.shields.io/badge/Angular-17%2B-DD0031.svg)](https://angular.io)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
+[![Documentation](https://img.shields.io/badge/docs-visist%20site-brightgreen)](https://leeocoder.github.io/ng-toastly/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 </div>
