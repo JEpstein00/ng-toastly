@@ -32,6 +32,7 @@ const I18n = (() => {
   const TRANSLATIONS = {
     'en': {
       // Navigation
+      'nav.home': 'Home',
       'nav.features': 'Features',
       'nav.getStarted': 'Get Started',
       'nav.docs': 'Documentation',
@@ -135,6 +136,54 @@ const I18n = (() => {
       'faq.q5': 'Is it accessible for screen readers?',
       'faq.a5': 'Yes! The container uses <code>aria-live="polite"</code> to announce new toasts to screen readers. Warning and danger toasts use <code>role="alert"</code>. Animations are automatically disabled when the user has <code>prefers-reduced-motion</code> enabled.',
 
+      // Code
+      'code.comment.addLine': '<!-- Add this line -->',
+      'code.comment.inject': '// Inject toast service',
+      'code.comment.show': '// Show a success toast!',
+      'code.string.success': "'Data saved successfully!'",
+      'code.step1.inject': '// Step 1: Inject the service',
+      'code.step2.show': '// Step 2: Use service to show a toast',
+      'code.string.worked': "'It worked! 🎉'",
+      'code.comment.required': '// Required',
+      'code.comment.optional': '// Optional',
+      'code.comment.duration': '// Time in milliseconds (0 = manual dismiss)',
+      'code.comment.dismissible': '// Show close button',
+      'code.string.yourMessage': "'Your message here'",
+      'code.string.toastTitle': "'Toast Title'",
+      'code.comment.noAutoClose': '// Does not close automatically',
+      'code.comment.cssGlobal': '/* Customize global look */',
+      'code.comment.cssColors': '/* Colors by type */',
+      'code.comment.iconTemplate': '<!-- Custom icon template -->',
+      'code.comment.lucideRef': '// Reference to Lucide icons',
+      'code.comment.accessTemplate': '// Access icon template',
+      'code.comment.useTemplate': '// Use template as toast icon',
+      'code.string.deploySuccess': "'Deploy started successfully!'",
+      'code.string.deployTitle': "'New Deploy'",
+      'code.comment.uploadToast': '// Upload toast with Download icon',
+      'code.comment.notificationToast': '// Notification toast with Bell icon',
+      'code.string.uploadTitle': "'Upload complete'",
+      'code.string.uploadMessage': "'file.pdf has been sent'",
+      'code.string.msgTitle': "'New message'",
+      'code.string.msgContent': "'John sent a message'",
+      'code.comment.lightTheme': '// Light theme (default)',
+      'code.comment.darkTheme': '// Dark theme',
+
+      // Position Demo
+      'pos.topLeft': '↖️ Top Left',
+      'pos.topCenter': '⬆️ Top Center',
+      'pos.topRight': '↗️ Top Right',
+      'pos.bottomLeft': '↙️ Bottom Left',
+      'pos.bottomCenter': '⬇️ Bottom Center',
+      'pos.bottomRight': '↘️ Bottom Right (default)',
+      
+      'pos.demoTitle': 'Position Demo',
+      'pos.topLeftMsg': 'Toast displayed at Top Left',
+      'pos.topCenterMsg': 'Toast displayed at Top Center',
+      'pos.topRightMsg': 'Toast displayed at Top Right',
+      'pos.bottomLeftMsg': 'Toast displayed at Bottom Left',
+      'pos.bottomCenterMsg': 'Toast displayed at Bottom Center',
+      'pos.bottomRightMsg': 'Toast displayed at Bottom Right',
+
       // Footer
       'footer.tagline': 'Toast notifications for Angular, done right.',
       'footer.docs': 'Documentation',
@@ -153,6 +202,7 @@ const I18n = (() => {
 
     'pt-br': {
       // Navigation
+      'nav.home': 'Início',
       'nav.features': 'Recursos',
       'nav.getStarted': 'Começar',
       'nav.docs': 'Documentação',
@@ -255,6 +305,52 @@ const I18n = (() => {
       
       'faq.q5': 'É acessível para leitores de tela?',
       'faq.a5': 'Sim! O container usa <code>aria-live="polite"</code> para anunciar novos toasts para leitores de tela. Toasts de warning e danger usam <code>role="alert"</code>. Animações são desabilitadas automaticamente quando o usuário tem <code>prefers-reduced-motion</code> ativado.',
+      'code.comment.addLine': '<!-- Adicione esta linha -->',
+      'code.comment.inject': '// Injeta o serviço de toasts',
+      'code.comment.show': '// Mostra um toast de sucesso!',
+      'code.string.success': "'Dados salvos com sucesso!'",
+      'code.step1.inject': '// Passo 1: Injeta o serviço',
+      'code.step2.show': '// Passo 2: Usa o serviço para mostrar um toast',
+      'code.string.worked': "'Funcionou! 🎉'",
+      'code.comment.required': '// Obrigatório',
+      'code.comment.optional': '// Opcionais',
+      'code.comment.duration': '// Tempo em milissegundos (0 = não fecha sozinho)',
+      'code.comment.dismissible': '// Mostra botão de fechar',
+      'code.string.yourMessage': "'Sua mensagem aqui'",
+      'code.string.toastTitle': "'Título do Toast'",
+      'code.comment.noAutoClose': '// Não fecha sozinho',
+      'code.comment.cssGlobal': '/* Customize o visual global */',
+      'code.comment.cssColors': '/* Cores por tipo */',
+      'code.comment.iconTemplate': '<!-- Template do ícone customizado -->',
+      'code.comment.lucideRef': '// Referência para os ícones do Lucide',
+      'code.comment.accessTemplate': '// Acessa o template do ícone',
+      'code.comment.useTemplate': '// Usa o template como ícone do toast',
+      'code.string.deploySuccess': "'Deploy iniciado com sucesso!'",
+      'code.string.deployTitle': "'Novo Deploy'",
+      'code.comment.uploadToast': '// Toast de upload com ícone de Download',
+      'code.comment.notificationToast': '// Toast de notificação com ícone de Sino',
+      'code.string.uploadTitle': "'Upload concluído'",
+      'code.string.uploadMessage': "'arquivo.pdf foi enviado'",
+      'code.string.msgTitle': "'Nova mensagem'",
+      'code.string.msgContent': "'João enviou uma mensagem'",
+      'code.comment.lightTheme': '// Tema claro (padrão)',
+      'code.comment.darkTheme': '// Tema escuro',
+
+      // Position Demo
+      'pos.topLeft': '↖️ Superior esquerdo',
+      'pos.topCenter': '⬆️ Superior centro',
+      'pos.topRight': '↗️ Superior direito',
+      'pos.bottomLeft': '↙️ Inferior esquerdo',
+      'pos.bottomCenter': '⬇️ Inferior centro',
+      'pos.bottomRight': '↘️ Inferior direito (padrão)',
+
+      'pos.demoTitle': 'Demonstração de Posição',
+      'pos.topLeftMsg': 'Toast exibido no Superior Esquerdo',
+      'pos.topCenterMsg': 'Toast exibido no Superior Centro',
+      'pos.topRightMsg': 'Toast exibido no Superior Direito',
+      'pos.bottomLeftMsg': 'Toast exibido no Inferior Esquerdo',
+      'pos.bottomCenterMsg': 'Toast exibido no Inferior Centro',
+      'pos.bottomRightMsg': 'Toast exibido no Inferior Direito',
 
       // Footer
       'footer.tagline': 'Toast notifications para Angular, do jeito certo.',
@@ -349,7 +445,9 @@ const I18n = (() => {
       const translation = translate(key);
       
       // Check if we should set innerHTML (for keys containing HTML)
-      if (translation.includes('<')) {
+      // BUT if it's a code block (key starts with 'code.'), usually we want raw text content to preserve code formatting
+      // unless we explicitly want HTML inside code (rare for this use case)
+      if (translation.includes('<') && !key.startsWith('code.')) {
         el.innerHTML = translation;
       } else {
         el.textContent = translation;

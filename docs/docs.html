@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Documentação completa do Toastly - Aprenda a usar, customizar e entender as decisões técnicas da biblioteca.">
-  <title>Documentação | Toastly</title>
+  <meta name="description" content="Complete Toastly documentation - Learn to use, customize, and understand the technical decisions of the library.">
+  <title>Documentation | Toastly</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="docs.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <!-- Theme Manager (load early to prevent flash) -->
+  <script src="js/theme.js"></script>
 </head>
 <body>
-  <!-- Navegação -->
+  <!-- Navigation -->
   <header class="header">
     <nav class="nav container">
       <a href="index.html" class="logo">
@@ -20,12 +24,31 @@
         <span class="logo-text">Toastly</span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#instalacao">Instalação</a></li>
-        <li><a href="#tipos">Tipos</a></li>
-        <li><a href="#css-variables">Customização</a></li>
-        <li><a href="https://github.com/toastly/toastly" target="_blank">GitHub</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="#instalacao" data-i18n="footer.installation">Installation</a></li>
+        <li><a href="#tipos" data-i18n="footer.toastTypes">Types</a></li>
+        <li><a href="#css-variables" data-i18n="footer.customization">Customization</a></li>
+        <li><a href="https://github.com/toastly/toastly" target="_blank" data-i18n="nav.github">GitHub</a></li>
       </ul>
+      
+      <!-- Header Controls -->
+      <div class="header-controls">
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">
+            🇺🇸 EN
+          </button>
+          <button class="lang-btn" data-lang="pt-br" onclick="setLanguage('pt-br')">
+            🇧🇷 PT
+          </button>
+        </div>
+        
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+          <i data-lucide="sun" class="theme-icon-light"></i>
+          <i data-lucide="moon" class="theme-icon-dark"></i>
+        </button>
+      </div>
     </nav>
   </header>
 
@@ -188,12 +211,12 @@
   `</span>,
 })
 <span class="code-keyword">export class</span> <span class="code-class">MeuComponente</span> {
-  <span class="code-comment">// Passo 1: Injeta o serviço</span>
+  <span class="code-comment" data-i18n="code.step1.inject">// Passo 1: Injeta o serviço</span>
   <span class="code-keyword">private readonly</span> toastService = inject(ToastService);
 
   mostrarToast(): <span class="code-keyword">void</span> {
-    <span class="code-comment">// Passo 2: Usa o serviço para mostrar um toast</span>
-    <span class="code-keyword">this</span>.toastService.success(<span class="code-string">'Funcionou! 🎉'</span>);
+    <span class="code-comment" data-i18n="code.step2.show">// Passo 2: Usa o serviço para mostrar um toast</span>
+    <span class="code-keyword">this</span>.toastService.success(<span class="code-string" data-i18n="code.string.worked">'Funcionou! 🎉'</span>);
   }
 }</code></pre>
         </div>
@@ -299,15 +322,15 @@
             <button class="copy-btn">Copiar</button>
           </div>
           <pre><code>toastService.show({
-  <span class="code-comment">// Obrigatório</span>
-  message: <span class="code-string">'Sua mensagem aqui'</span>,
+  <span class="code-comment" data-i18n="code.comment.required">// Obrigatório</span>
+  message: <span class="code-string" data-i18n="code.string.yourMessage">'Sua mensagem aqui'</span>,
   
-  <span class="code-comment">// Opcionais</span>
-  title: <span class="code-string">'Título do Toast'</span>,
+  <span class="code-comment" data-i18n="code.comment.optional">// Opcionais</span>
+  title: <span class="code-string" data-i18n="code.string.toastTitle">'Título do Toast'</span>,
   type: <span class="code-string">'success'</span>,        <span class="code-comment">// 'info' | 'success' | 'warning' | 'danger'</span>
   theme: <span class="code-string">'dark'</span>,          <span class="code-comment">// 'light' | 'dark'</span>
-  durationMs: <span class="code-number">8000</span>,       <span class="code-comment">// Tempo em milissegundos (0 = não fecha sozinho)</span>
-  dismissible: <span class="code-keyword">true</span>,     <span class="code-comment">// Mostra botão de fechar</span>
+  durationMs: <span class="code-number">8000</span>,       <span class="code-comment" data-i18n="code.comment.duration">// Tempo em milissegundos (0 = não fecha sozinho)</span>
+  dismissible: <span class="code-keyword">true</span>,     <span class="code-comment" data-i18n="code.comment.dismissible">// Mostra botão de fechar</span>
   styleClass: <span class="code-string">'minha-classe'</span>,
 });</code></pre>
         </div>
@@ -390,29 +413,29 @@
 
         <h2>Posições disponíveis</h2>
         <div class="positions-demo">
-          <div class="position-option">
+          <div class="position-option" onclick="showPositionToast('top-left')">
             <code>top-left</code>
-            <span>↖️ Superior esquerdo</span>
+            <span data-i18n="pos.topLeft">↖️ Superior esquerdo</span>
           </div>
-          <div class="position-option">
+          <div class="position-option" onclick="showPositionToast('top-center')">
             <code>top-center</code>
-            <span>⬆️ Superior centro</span>
+            <span data-i18n="pos.topCenter">⬆️ Superior centro</span>
           </div>
-          <div class="position-option">
+          <div class="position-option" onclick="showPositionToast('top-right')">
             <code>top-right</code>
-            <span>↗️ Superior direito</span>
+            <span data-i18n="pos.topRight">↗️ Superior direito</span>
           </div>
-          <div class="position-option">
+          <div class="position-option" onclick="showPositionToast('bottom-left')">
             <code>bottom-left</code>
-            <span>↙️ Inferior esquerdo</span>
+            <span data-i18n="pos.bottomLeft">↙️ Inferior esquerdo</span>
           </div>
-          <div class="position-option">
+          <div class="position-option" onclick="showPositionToast('bottom-center')">
             <code>bottom-center</code>
-            <span>⬇️ Inferior centro</span>
+            <span data-i18n="pos.bottomCenter">⬇️ Inferior centro</span>
           </div>
-          <div class="position-option active">
+          <div class="position-option active" onclick="showPositionToast('bottom-right')">
             <code>bottom-right</code>
-            <span>↘️ Inferior direito (padrão)</span>
+            <span data-i18n="pos.bottomRight">↘️ Inferior direito (padrão)</span>
           </div>
         </div>
 
@@ -446,7 +469,7 @@
   theme: <span class="code-string">'dark'</span>,
   title: <span class="code-string">'Nova atualização'</span>,
   message: <span class="code-string">'Versão 4.2 disponível'</span>,
-  durationMs: <span class="code-number">0</span>, <span class="code-comment">// Não fecha sozinho</span>
+  durationMs: <span class="code-number">0</span>, <span class="code-comment" data-i18n="code.comment.noAutoClose">// Não fecha sozinho</span>
   actions: [
     {
       label: <span class="code-string">'Pular'</span>,
@@ -481,7 +504,7 @@
             <span>styles.css</span>
             <button class="copy-btn">Copiar</button>
           </div>
-          <pre><code><span class="code-comment">/* Customize o visual global */</span>
+          <pre><code><span class="code-comment" data-i18n="code.comment.cssGlobal">/* Customize o visual global */</span>
 :root {
   --toastly-bg: <span class="code-string">#ffffff</span>;
   --toastly-text: <span class="code-string">#18181b</span>;
@@ -491,7 +514,7 @@
   --toastly-padding: <span class="code-string">16px</span>;
   --toastly-shadow: <span class="code-string">0 4px 12px rgba(0, 0, 0, 0.08)</span>;
   
-  <span class="code-comment">/* Cores por tipo */</span>
+  <span class="code-comment" data-i18n="code.comment.cssColors">/* Cores por tipo */</span>
   --toastly-success: <span class="code-string">#16a34a</span>;
   --toastly-warning: <span class="code-string">#f59e0b</span>;
   --toastly-danger: <span class="code-string">#dc2626</span>;
@@ -610,7 +633,7 @@
   selector: <span class="code-string">'app-exemplo'</span>,
   imports: [LucideAngularModule],
   template: <span class="code-string">`
-    &lt;!-- Template do ícone customizado --&gt;
+    `</span><span class="code-comment" data-i18n="code.comment.iconTemplate">&lt;!-- Template do ícone customizado --&gt;</span><span class="code-string">
     &lt;ng-template #rocketIcon&gt;
       &lt;lucide-icon [img]="Rocket" [size]="20" /&gt;
     &lt;/ng-template&gt;
@@ -631,24 +654,24 @@
 <span class="code-keyword">export class</span> <span class="code-class">ExemploComponent</span> {
   <span class="code-keyword">private readonly</span> toastService = inject(ToastService);
 
-  <span class="code-comment">// Referência para os ícones do Lucide</span>
+  <span class="code-comment" data-i18n="code.comment.lucideRef">// Referência para os ícones do Lucide</span>
   <span class="code-keyword">readonly</span> Rocket = Rocket;
   <span class="code-keyword">readonly</span> Bell = Bell;
   <span class="code-keyword">readonly</span> Download = Download;
 
-  <span class="code-comment">// Acessa o template do ícone</span>
+  <span class="code-comment" data-i18n="code.comment.accessTemplate">// Acessa o template do ícone</span>
   <span class="code-keyword">readonly</span> rocketIconRef = viewChild<span class="code-keyword">&lt;</span>TemplateRef<span class="code-keyword">&lt;</span><span class="code-keyword">void</span><span class="code-keyword">&gt;&gt;</span>(<span class="code-string">'rocketIcon'</span>);
   <span class="code-keyword">readonly</span> bellIconRef = viewChild<span class="code-keyword">&lt;</span>TemplateRef<span class="code-keyword">&lt;</span><span class="code-keyword">void</span><span class="code-keyword">&gt;&gt;</span>(<span class="code-string">'bellIcon'</span>);
   <span class="code-keyword">readonly</span> downloadIconRef = viewChild<span class="code-keyword">&lt;</span>TemplateRef<span class="code-keyword">&lt;</span><span class="code-keyword">void</span><span class="code-keyword">&gt;&gt;</span>(<span class="code-string">'downloadIcon'</span>);
 
   mostrarComIconeCustomizado(): <span class="code-keyword">void</span> {
-    <span class="code-comment">// Usa o template como ícone do toast</span>
+    <span class="code-comment" data-i18n="code.comment.useTemplate">// Usa o template como ícone do toast</span>
     <span class="code-keyword">const</span> iconTemplate = <span class="code-keyword">this</span>.rocketIconRef();
     
     <span class="code-keyword">if</span> (iconTemplate) {
       <span class="code-keyword">this</span>.toastService.show({
-        message: <span class="code-string">'Deploy iniciado com sucesso!'</span>,
-        title: <span class="code-string">'Novo Deploy'</span>,
+        message: <span class="code-string" data-i18n="code.string.deploySuccess">'Deploy iniciado com sucesso!'</span>,
+        title: <span class="code-string" data-i18n="code.string.deployTitle">'Novo Deploy'</span>,
         iconTemplate: iconTemplate,
       });
     }
@@ -696,18 +719,18 @@
             <span>Exemplo prático</span>
             <button class="copy-btn">Copiar</button>
           </div>
-          <pre><code><span class="code-comment">// Toast de upload com ícone de Download</span>
+          <pre><code><span class="code-comment" data-i18n="code.comment.uploadToast">// Toast de upload com ícone de Download</span>
 <span class="code-keyword">this</span>.toastService.show({
-  title: <span class="code-string">'Upload concluído'</span>,
-  message: <span class="code-string">'arquivo.pdf foi enviado'</span>,
+  title: <span class="code-string" data-i18n="code.string.uploadTitle">'Upload concluído'</span>,
+  message: <span class="code-string" data-i18n="code.string.uploadMessage">'arquivo.pdf foi enviado'</span>,
   iconTemplate: <span class="code-keyword">this</span>.downloadIconRef(),
   type: <span class="code-string">'success'</span>,
 });
 
-<span class="code-comment">// Toast de notificação com ícone de Sino</span>
+<span class="code-comment" data-i18n="code.comment.notificationToast">// Toast de notificação com ícone de Sino</span>
 <span class="code-keyword">this</span>.toastService.show({
-  title: <span class="code-string">'Nova mensagem'</span>,
-  message: <span class="code-string">'João enviou uma mensagem'</span>,
+  title: <span class="code-string" data-i18n="code.string.msgTitle">'Nova mensagem'</span>,
+  message: <span class="code-string" data-i18n="code.string.msgContent">'João enviou uma mensagem'</span>,
   iconTemplate: <span class="code-keyword">this</span>.bellIconRef(),
   theme: <span class="code-string">'dark'</span>,
 });</code></pre>
@@ -735,10 +758,10 @@
             <span>Comparação</span>
             <button class="copy-btn">Copiar</button>
           </div>
-          <pre><code><span class="code-comment">// Tema claro (padrão)</span>
+          <pre><code><span class="code-comment" data-i18n="code.comment.lightTheme">// Tema claro (padrão)</span>
 toastService.success(<span class="code-string">'Tema claro'</span>, { theme: <span class="code-string">'light'</span> });
 
-<span class="code-comment">// Tema escuro</span>
+<span class="code-comment" data-i18n="code.comment.darkTheme">// Tema escuro</span>
 toastService.success(<span class="code-string">'Tema escuro'</span>, { theme: <span class="code-string">'dark'</span> });</code></pre>
         </div>
 
@@ -999,6 +1022,14 @@ toastService.success(<span class="code-string">'Tema escuro'</span>, { theme: <s
     }, { rootMargin: '-20% 0px -60% 0px' });
 
     sections.forEach(section => observer.observe(section));
+    
+    // Initialize Lucide icons
+    lucide.createIcons();
   </script>
+  
+  <!-- i18n Manager -->
+  <script src="js/i18n.js"></script>
+  <!-- Toast Demo Logic -->
+  <script src="js/toast-demo.js"></script>
 </body>
 </html>
