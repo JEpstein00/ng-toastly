@@ -7,7 +7,9 @@
    CSS VARIABLES - DESIGN TOKENS
    ============================================================================ */
 
-:root {
+/* Light Theme (Default) */
+:root,
+[data-theme="light"] {
   /* Colors */
   --color-primary: #7c3aed;
   --color-primary-dark: #6d28d9;
@@ -28,8 +30,37 @@
   --color-warning: #f59e0b;
   --color-danger: #dc2626;
   --color-info: #7c3aed;
+
+  /* Header specific */
+  --header-bg: rgba(250, 250, 250, 0.8);
+  --code-bg: #f4f4f5;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --color-background: #0a0a0b;
+  --color-surface: #18181b;
+  --color-surface-elevated: #27272a;
   
-  /* Typography */
+  --color-text: #fafafa;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+  
+  --color-border: #3f3f46;
+  --color-border-light: #27272a;
+  
+  --color-success: #22c55e;
+  --color-warning: #fbbf24;
+  --color-danger: #ef4444;
+  --color-info: #a78bfa;
+
+  /* Header specific */
+  --header-bg: rgba(10, 10, 11, 0.8);
+  --code-bg: #27272a;
+}
+
+/* Typography (theme-independent) */
+:root {
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
@@ -205,7 +236,7 @@ code {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(250, 250, 250, 0.8);
+  background-color: var(--header-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border-light);
 }
@@ -246,6 +277,94 @@ code {
 
 .nav-links a:hover {
   color: var(--color-text);
+}
+
+/* Header Controls (Theme + Language) */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Language Switcher */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-1);
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.lang-btn:hover {
+  color: var(--color-text);
+}
+
+.lang-btn--active {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: var(--color-border-light);
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--color-text-secondary);
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.theme-icon-light,
+.theme-icon-dark {
+  width: 20px;
+  height: 20px;
+}
+
+/* Hide one icon based on theme */
+[data-theme="light"] .theme-icon-light,
+:root:not([data-theme]) .theme-icon-light {
+  display: none;
+}
+
+[data-theme="dark"] .theme-icon-dark {
+  display: none;
+}
+
+[data-theme="dark"] .theme-icon-light {
+  display: block;
 }
 
 @media (max-width: 768px) {
