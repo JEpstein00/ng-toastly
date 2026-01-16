@@ -40,7 +40,12 @@ export function detectProjectType(
   const mainFilePath = `${sourceRoot}/main.ts`;
   const appConfigPath = `${sourceRoot}/app/app.config.ts`;
   const appModulePath = `${sourceRoot}/app/app.module.ts`;
-  const appComponentPath = `${sourceRoot}/app/app.component.ts`;
+
+  // Angular 17+ / 20+ support: app.component.ts or app.ts
+  let appComponentPath = `${sourceRoot}/app/app.component.ts`;
+  if (!tree.exists(appComponentPath) && tree.exists(`${sourceRoot}/app/app.ts`)) {
+    appComponentPath = `${sourceRoot}/app/app.ts`;
+  }
 
   // Check if main.ts exists
   const mainContent = tree.read(mainFilePath);
@@ -92,7 +97,9 @@ export function findAppConfigPath(tree: Tree, mainFilePath: string): string | un
   const mainText = mainContent.toString('utf-8');
 
   // Look for import from app.config
-  const configImportMatch = mainText.match(/import\s*{[^}]*}\s*from\s*['"]\.\/app\/app\.config['"]/);
+  const configImportMatch = mainText.match(
+    /import\s*{[^}]*}\s*from\s*['"]\.\/app\/app\.config['"]/
+  );
   if (configImportMatch) {
     const dir = mainFilePath.substring(0, mainFilePath.lastIndexOf('/'));
     return `${dir}/app/app.config.ts`;
